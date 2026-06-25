@@ -869,3 +869,30 @@ html[data-darkreader-scheme="dark"] .teal { background-color: #0a2a4a !important
 html[data-darkreader-scheme="dark"] .teal-text { color: #7eb3ff !important; }
 html[data-darkreader-scheme="dark"] blockquote { color: #e8e8e8 !important; border-left-color: #5b9fff !important; }
 html[data-darkreader-scheme="dark"] #contact a:not(.btn-floating) { color: #7eb3ff !important; }
+
+/* ── Dark mode readability fixes ── */
+@media (prefers-color-scheme: dark) {
+  main {
+    background-image: none !important;
+    background-color: #121212 !important;
+  }
+  body {
+    background-color: #121212 !important;
+  }
+  ul.side-nav.fixed a,
+  ul.side-nav.fixed a span,
+  ul#slide-out li a,
+  ul#slide-out li a span {
+    color: #e8e8e8 !important;
+  }
+  ul.side-nav.fixed li.logo {
+    background-color: #1a1a1a !important;
+  }
+  p, li, dt, dd, blockquote {
+    color: #e8e8e8 !important;
+  }
+  .card {
+    background-color: #1e1e1e !important;
+    color: #e8e8e8 !important;
+  }
+}
