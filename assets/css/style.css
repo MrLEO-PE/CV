@@ -802,3 +802,34 @@ html, body {
   padding: 0;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+/* ── Dark mode variables ── */
+:root {
+  --bg:        #ffffff;
+  --text:      #1a1a1a;
+  --accent:    #0057ff;
+  --card-bg:   #f5f5f5;
+  --border:    #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0f0f0f;
+    --text:      #e8e8e8;
+    --accent:    #5b9fff;
+    --card-bg:   #1e1e1e;
+    --border:    #333333;
+  }
+}
+
+html[data-darkreader-scheme="dark"] {
+  --bg:        #0f0f0f;
+  --text:      #e8e8e8;
+  --accent:    #5b9fff;
+  --card-bg:   #1e1e1e;
+  --border:    #333333;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
