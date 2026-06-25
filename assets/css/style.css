@@ -896,3 +896,23 @@ html[data-darkreader-scheme="dark"] #contact a:not(.btn-floating) { color: #7eb3
     color: #e8e8e8 !important;
   }
 }
+
+/* ── Sidebar fix for dark mode ── */
+@media (prefers-color-scheme: dark) {
+  ul.side-nav,
+  ul.side-nav.fixed,
+  ul#slide-out {
+    background-color: #1a1a1a !important;
+  }
+  ul.side-nav.fixed a,
+  ul.side-nav a,
+  ul#slide-out a,
+  ul.side-nav li a,
+  ul#slide-out li a {
+    color: #e8e8e8 !important;
+  }
+  ul.side-nav li i,
+  ul#slide-out li i {
+    color: #e8e8e8 !important;
+  }
+}
