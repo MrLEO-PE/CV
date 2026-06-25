@@ -833,3 +833,45 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+/* ── Dark mode overrides ── */
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+  html[data-darkreader-scheme="dark"],
+  @media (prefers-color-scheme: dark) {
+    body { background-color: var(--bg); color: var(--text); }
+  }
+}
+
+/* Override hardcoded colors in dark mode */
+@media (prefers-color-scheme: dark) {
+  body { background-color: var(--bg) !important; color: var(--text) !important; }
+  a { color: #7eb3ff !important; }
+  blockquote { border-left-color: #5b9fff; color: var(--text); }
+  nav { background: #1a1a1a !important; }
+  ul.side-nav.fixed li.logo { background-color: #1a1a1a !important; border-bottom-color: #333 !important; }
+  ul.side-nav.fixed a { color: #e8e8e8 !important; }
+  ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
+  ul#slide-out li:not(.logo) a span { color: #e8e8e8 !important; }
+  .card { background-color: #1e1e1e !important; color: var(--text) !important; }
+  .card li a { color: #e8e8e8 !important; }
+  #skills h4 { border-bottom-color: #333 !important; }
+  #experience .card-content .row { border-bottom-color: #333 !important; }
+  .teal { background-color: #0a2a4a !important; }
+  .teal-text { color: #7eb3ff !important; }
+  h3 { color: var(--text) !important; }
+  .grey-text { color: #aaa !important; }
+  .card-action span { color: #aaa !important; }
+  .card ul li li { color: #bbb !important; }
+  #contact a:not(.btn-floating) { color: #7eb3ff !important; }
+}
+
+html[data-darkreader-scheme="dark"] body { background-color: var(--bg) !important; color: var(--text) !important; }
+html[data-darkreader-scheme="dark"] a { color: #7eb3ff !important; }
+html[data-darkreader-scheme="dark"] nav { background: #1a1a1a !important; }
+html[data-darkreader-scheme="dark"] ul.side-nav.fixed li.logo { background-color: #1a1a1a !important; border-bottom-color: #333 !important; }
+html[data-darkreader-scheme="dark"] ul.side-nav.fixed a { color: #e8e8e8 !important; }
+html[data-darkreader-scheme="dark"] .card { background-color: #1e1e1e !important; color: #e8e8e8 !important; }
+html[data-darkreader-scheme="dark"] .teal { background-color: #0a2a4a !important; }
+html[data-darkreader-scheme="dark"] .teal-text { color: #7eb3ff !important; }
+html[data-darkreader-scheme="dark"] blockquote { color: #e8e8e8 !important; border-left-color: #5b9fff !important; }
+html[data-darkreader-scheme="dark"] #contact a:not(.btn-floating) { color: #7eb3ff !important; }
