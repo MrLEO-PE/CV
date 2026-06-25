@@ -835,12 +835,6 @@ body {
 }
 
 /* ── Dark mode overrides ── */
-@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
-  html[data-darkreader-scheme="dark"],
-  @media (prefers-color-scheme: dark) {
-    body { background-color: var(--bg); color: var(--text); }
-  }
-}
 
 /* Override hardcoded colors in dark mode */
 @media (prefers-color-scheme: dark) {
