@@ -916,3 +916,50 @@ html[data-darkreader-scheme="dark"] #contact a:not(.btn-floating) { color: #7eb3
     color: #e8e8e8 !important;
   }
 }
+
+
+/* ---- PE Apps section ---- */
+.app-video {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.app-video video {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #000;
+}
+
+.app-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0288d1;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: rgba(2, 136, 209, 0.08);
+  border-left: 3px solid #0288d1;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-link:hover,
+.app-link:focus {
+  background: rgba(2, 136, 209, 0.18);
+  color: #01579b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-link {
+    background: rgba(2, 136, 209, 0.18);
+    color: #4fc3f7;
+  }
+  .app-link:hover,
+  .app-link:focus {
+    color: #81d4fa;
+  }
+}
