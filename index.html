@@ -495,7 +495,7 @@
               <a href="https://mrleo-pe.github.io/Assesment/" target="_blank" rel="noopener" class="app-link">Open the Self Assessment App</a>
             </div>
             <div class="app-video">
-              <video controls muted playsinline preload="metadata" width="1200" height="600">
+              <video class="autoplay-video" controls loop muted playsinline preload="none" width="1200" height="600">
                 <source src="assets/Video/self-assessment-app.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -516,7 +516,7 @@
               <a href="https://mrleo-pe.github.io/GYM-TRAINING/" target="_blank" rel="noopener" class="app-link">Open the Gym Weight Training Tracker</a>
             </div>
             <div class="app-video">
-              <video controls muted playsinline preload="metadata" width="1200" height="600">
+              <video class="autoplay-video" controls loop muted playsinline preload="none" width="1200" height="600">
                 <source src="assets/Video/gym-weight-training.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -536,7 +536,7 @@
               <a href="https://mrleo-pe.github.io/IGCSE/" target="_blank" rel="noopener" class="app-link">Open the IGCSE Workbook</a>
             </div>
             <div class="app-video">
-              <video controls muted playsinline preload="metadata" width="1200" height="600">
+              <video class="autoplay-video" controls loop muted playsinline preload="none" width="1200" height="600">
                 <source src="assets/Video/igcse-workbook.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -557,7 +557,7 @@
                 class="app-link">Open the Timetable Planner</a>
             </div>
             <div class="app-video">
-              <video controls muted playsinline preload="metadata" width="1200" height="600">
+              <video class="autoplay-video" controls loop muted playsinline preload="none" width="1200" height="600">
                 <source src="assets/Video/timetable-planner.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -760,6 +760,38 @@
       window.addEventListener('resize', function () {
         if (isOpen && window.innerWidth > 992) closeMenu();
       });
+    })();
+  </script>
+
+  <script>
+    // PE Apps videos: play when scrolled into view, pause when they leave.
+    // They stay muted, which is what lets browsers autoplay them at all.
+    (function () {
+      var videos = document.querySelectorAll('.autoplay-video');
+      if (!videos.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        Array.prototype.forEach.call(videos, function (v) {
+          v.setAttribute('preload', 'metadata');
+          v.setAttribute('autoplay', '');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            v.muted = true;
+            var p = v.play();
+            if (p && p.catch) p.catch(function () { /* browser blocked it: controls are there */ });
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.4 });
+
+      Array.prototype.forEach.call(videos, function (v) { observer.observe(v); });
     })();
   </script>
 
