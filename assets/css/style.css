@@ -460,25 +460,41 @@ li.logo span {
   max-width: 46ch;
 }
 
+/* The typed role line carries the hero, so it sits a clear step
+   above the traits line below it: heading face, heavier, larger. */
 #intro .caption h5:first-of-type {
-  min-height: 1.6em;
+  min-height: 1.5em;
+  margin: 2px 0 20px;
+  font-family: var(--font-head);
+  font-size: clamp(1.1rem, 2.1vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  max-width: none;
 }
 
 #intro .typing {
-  color: #7fd3ec !important;
-  font-weight: 500;
+  color: #9fe0f5 !important;
+  font-weight: 600;
+}
+
+/* Traits line: quieter, so the role reads first */
+#intro .caption h5:nth-of-type(2) {
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  color: #b7c7d7;
+  max-width: 48ch;
+  margin-bottom: 0;
 }
 
 /* The caret: solid while characters are being typed or erased,
    softly pulsing while the finished phrase is held. */
 #intro .type-caret {
   display: inline-block;
-  width: 2px;
+  width: 3px;
   height: 1.05em;
-  margin-left: 4px;
+  margin-left: 5px;
   vertical-align: -0.14em;
-  border-radius: 1px;
-  background: #7fd3ec;
+  border-radius: 2px;
+  background: #9fe0f5;
   animation: caret-pulse 1.15s ease-in-out infinite;
 }
 
