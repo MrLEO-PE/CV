@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Typefaces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" />
   <!-- Custom Styles-->
   <link rel="stylesheet" href="assets/css/style.css" />
   <title> Léo Sevin | Physical Education Teacher </title>
@@ -55,10 +60,27 @@
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
   <meta name="color-scheme" content="light dark">
   <meta name="darkreader-lock">
+
+  <script>
+    // Apply the saved theme before first paint so there is no flash.
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { /* private mode: fall back to the system preference */ }
+    })();
+  </script>
 </head>
 
 <body>
-  
+
+  <!-- Light / dark switch -->
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+    <i class="fa fa-moon-o" aria-hidden="true"></i><i class="fa fa-sun-o" aria-hidden="true"></i>
+  </button>
+
   <!-- Navigation Menu-->
   <!-- Nav class 1 -->
   <nav class="hide-on-small-only">
@@ -197,10 +219,10 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+          <div class="content section-padding valign">
             <div class="caption">
               <h2>Hello, I am <span class="teal">Léo Sevin</span></h2>
-              <h5 style="color:#fff"> <span class="typing" style="font-weight: 300; color:#112240"></span></h5>
+              <h5><span class="typing"></span></h5>
               <h5>Adaptable, Energetic, Creative, Student-Centered, Passionate about sport and education</h5>
             </div>
             <div class="social">
@@ -228,7 +250,7 @@
 
     <!-- Second Section: About -->
     <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
+      <h3 class="page-title">About</h3>
       <div class="container flow-text">
         <!-- <blockquote>
           <h2>
@@ -272,7 +294,7 @@
 
         <!-- Third Section: Experience -->
     <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
+      <h3 class="page-title">Experience</h3>
       <div class="container">
 
 <!-- Latest Experience -->
@@ -283,7 +305,7 @@
         <a href="https://chis.edu.my/" target="_blank">
           <img alt="Crescendo HELP International School logo"
                src="assets/img/logos/crescendo.png"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://chis.edu.my/" target="_blank" class="teal-text hoverline">
@@ -292,8 +314,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-      <li style="list-style:none; text-align:center; font-weight:bold; color:#233554 ; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+      <li class="role-title">
         Physical Education Teacher
       </li>
       <li>Planned and delivered engaging PE lessons aligned with the IPC, IMYC and Cambridge curricula for primary and middle school students</li>
@@ -313,7 +335,7 @@
         <a href="https://sgstar.edu.vn/" target="_blank">
           <img alt="Saigon Star logo"
                src="assets/img/logos/saigon-star.jpeg"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://sgstar.edu.vn/" target="_blank" class="teal-text hoverline">
@@ -322,8 +344,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-      <li style="list-style:none; text-align:center; font-weight:bold; color:#233554 ; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+      <li class="role-title">
         Head of Physical Education
       </li>
       <li>Planned and delivered engaging PE lessons aligned with the IPC, IMYC and Cambridge curricula for primary and middle school students</li>
@@ -345,7 +367,7 @@
         <a href="https://fr.lycee-blaisepascal.com/" target="_blank">
           <img alt="French Highschool Blaise Pascal logo"
                src="https://imgs.search.brave.com/P79wPD2fdyGrwRLxnhFjNdvf1dLUdL7bOg7PNseVHeY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZnIvZC9kOC9M/eWMlQzMlQTllX0Js/YWlzZV9QYXNjYWxf/QWJpZGphbl9Mb2dv/LnBuZw"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://fr.lycee-blaisepascal.com/" target="_blank" class="teal-text hoverline">
@@ -354,8 +376,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-      <li style="list-style:none; text-align:center; font-weight:bold; color:#233554; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+      <li class="role-title">
         Physical Education Teacher
       </li>
       <li>Developed new assessments for Year 7 and Year 8 students</li>
@@ -376,7 +398,7 @@
         <a href="https://gretaformation.ac-orleans-tours.fr/" target="_blank">
           <img alt="Greta Coeur de Loire logo"
                src="assets/img/logos/greta.png"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://gretaformation.ac-orleans-tours.fr/" target="_blank" class="teal-text hoverline">
@@ -385,8 +407,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-      <li style="list-style:none; text-align:center; font-weight:bold; color:#233554; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+      <li class="role-title">
         Physical Education Teacher
       </li>
       <li>Led the Physical Education programme</li>
@@ -405,7 +427,7 @@
         <a href="https://0451241e.index-education.net/pronote/pageetablissement.html" target="_blank">
           <img alt="Middle School André Malraux logo"
                src="assets/img/logos/andre-malraux.jpg"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://0451241e.index-education.net/pronote/pageetablissement.html" target="_blank" class="teal-text hoverline">
@@ -414,8 +436,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-      <li style="list-style:none; text-align:center; font-weight:bold; color:#233554; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+      <li class="role-title">
         Internship as Physical Education Teacher
       </li>
       <li>Delivered the PE programme</li>
@@ -435,7 +457,7 @@
         <a href="https://poussieresdevie.org/en/" target="_blank">
           <img alt="Poussière de Vie Logo"
                src="assets/img/logos/poussiere-de-vie.jpg"
-               class="responsive-img center-block" style="max-width:120px; margin-bottom:10px;" />
+               class="responsive-img org-logo" />
         </a>
         <span class="card-title" style="display:block; margin-top:10px;">
           <a href="https://poussieresdevie.org/en/" target="_blank" class="teal-text hoverline">
@@ -444,8 +466,8 @@
         </span>
       </div>
     </div>
-    <ul style="margin:0 auto 0 auto; max-width:600px;">
-  <li style="list-style:none; text-align:center; font-weight:bold; color:#233554 ; font-size:1.12rem; margin-bottom:8px;">
+    <ul class="card-bullets">
+  <li class="role-title">
     Physical Education Teacher
   </li>
   <li>Led the Physical Education programme</li>
@@ -466,7 +488,7 @@
 
     <!-- Fifth Section: PE Apps -->
     <section id="pe-apps" class="section scrollspy">
-      <h3 class="page-title white-text teal">PE Apps</h3>
+      <h3 class="page-title">PE Apps</h3>
       <div class="container">
 
         <p class="flow-text">
@@ -582,7 +604,7 @@
 
     <!-- Seventh Section: Education -->
     <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
+      <h3 class="page-title">Education</h3>
       <div class="container">
         <div class="row">
           <!-- Education -->
@@ -638,7 +660,7 @@
 
     <!-- Eighth Section: Contact -->
     <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
+      <h3 class="page-title">Contact</h3>
       <div class="container">
         <p>
           <a aria-label="Message Léo on WhatsApp" href="https://wa.me/2250767965805" target="_blank" rel="noopener"
@@ -713,7 +735,6 @@
         sideNav.style.width = '65vw';
         sideNav.style.maxWidth = '240px';
         sideNav.style.overflowY = 'auto';
-        sideNav.style.background = '#fff';
         sideNav.style.zIndex = '9999';
         sideNav.style.boxShadow = '2px 0 8px rgba(0,0,0,0.15)';
         document.body.style.overflow = 'hidden';
@@ -783,6 +804,52 @@
       }, { threshold: 0.4 });
 
       Array.prototype.forEach.call(videos, function (v) { observer.observe(v); });
+    })();
+  </script>
+
+  <script>
+    // Light / dark switch. No stored choice = follow the system.
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function currentTheme() {
+        var set = document.documentElement.getAttribute('data-theme');
+        if (set) return set;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      toggle.addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) { /* nothing to store into */ }
+      });
+    })();
+  </script>
+
+  <script>
+    // Cards fade in as they come into view.
+    (function () {
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cards = document.querySelectorAll('main .card');
+      if (!cards.length || reduced || !('IntersectionObserver' in window)) return;
+
+      Array.prototype.forEach.call(cards, function (card) { card.classList.add('reveal'); });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      Array.prototype.forEach.call(cards, function (card) { observer.observe(card); });
+
+      // Safety net: if the observer never reports back, show everything anyway.
+      window.setTimeout(function () {
+        Array.prototype.forEach.call(cards, function (card) { card.classList.add('is-visible'); });
+      }, 2500);
     })();
   </script>
 
