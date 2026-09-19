@@ -712,24 +712,36 @@
       var phrases = [
         "Physical Education Teacher",
         "Coordinator of Physical Education",
+        "Head of Physical Education",
+        "IGCSE PE Specialist",
+        "Builder of PE Web Apps",
         "Sportively Dedicated!"
       ];
       var index = 0;
 
       el.textContent = phrases[0];
       el.classList.add('is-visible');
+      if (phrases.length < 2) return;
 
+      // Readers who asked for less motion still get every phrase,
+      // just swapped straight over instead of cross-faded.
       var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduced || phrases.length < 2) return;
+      if (reduced) el.classList.add('no-fade');
 
       window.setInterval(function () {
+        index = (index + 1) % phrases.length;
+
+        if (reduced) {
+          el.textContent = phrases[index];
+          return;
+        }
+
         el.classList.remove('is-visible');
         window.setTimeout(function () {
-          index = (index + 1) % phrases.length;
           el.textContent = phrases[index];
           el.classList.add('is-visible');
-        }, 500);
-      }, 3800);
+        }, 450);
+      }, 3200);
     })();
   </script>
 

@@ -478,6 +478,13 @@ li.logo span {
   transform: none;
 }
 
+/* Reduced motion: keep the phrases rotating, drop the movement */
+#intro .typing.no-fade {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 #intro.section .underline {
   border-bottom: 4px solid #7fd3ec;
 }
