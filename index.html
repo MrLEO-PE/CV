@@ -704,7 +704,10 @@
       $(".tooltipped").tooltip();
     });
 
-    // Intro tagline: each phrase fades in, holds, then fades out.
+    // Intro tagline: typed out character by character, held, erased,
+    // then on to the next role. The caret sits steady while the text
+    // is moving and only pulses during the pause, which is what keeps
+    // it easy on the eye.
     (function () {
       var el = document.querySelector('.typing');
       if (!el) return;
@@ -717,31 +720,61 @@
         "Builder of PE Web Apps",
         "Sportively Dedicated!"
       ];
+
+      var TYPE_MS = 55;    // per character while writing
+      var ERASE_MS = 26;   // per character while erasing
+      var HOLD_MS = 1800;  // pause on the finished phrase
+      var GAP_MS = 260;    // pause before the next phrase starts
+
+      var caret = document.createElement('span');
+      caret.className = 'type-caret';
+      caret.setAttribute('aria-hidden', 'true');
+      el.parentNode.insertBefore(caret, el.nextSibling);
+
       var index = 0;
+      var chars = 0;
+      var erasing = false;
 
-      el.textContent = phrases[0];
-      el.classList.add('is-visible');
-      if (phrases.length < 2) return;
+      function steady(on) {
+        if (on) caret.classList.add('is-steady');
+        else caret.classList.remove('is-steady');
+      }
 
-      // Readers who asked for less motion still get every phrase,
-      // just swapped straight over instead of cross-faded.
-      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduced) el.classList.add('no-fade');
+      function tick() {
+        var phrase = phrases[index];
 
-      window.setInterval(function () {
-        index = (index + 1) % phrases.length;
+        if (!erasing) {
+          chars++;
+          el.textContent = phrase.slice(0, chars);
+          steady(true);
 
-        if (reduced) {
-          el.textContent = phrases[index];
+          if (chars >= phrase.length) {
+            erasing = true;
+            steady(false);
+            window.setTimeout(tick, HOLD_MS);
+            return;
+          }
+          // A little variation per keystroke reads as human rather than machine.
+          window.setTimeout(tick, TYPE_MS + Math.random() * 45);
           return;
         }
 
-        el.classList.remove('is-visible');
-        window.setTimeout(function () {
-          el.textContent = phrases[index];
-          el.classList.add('is-visible');
-        }, 450);
-      }, 3200);
+        chars--;
+        el.textContent = phrase.slice(0, chars);
+        steady(true);
+
+        if (chars <= 0) {
+          erasing = false;
+          index = (index + 1) % phrases.length;
+          steady(false);
+          window.setTimeout(tick, GAP_MS);
+          return;
+        }
+        window.setTimeout(tick, ERASE_MS);
+      }
+
+      el.textContent = '';
+      window.setTimeout(tick, 500);
     })();
   </script>
 

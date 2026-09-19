@@ -465,24 +465,31 @@ li.logo span {
 }
 
 #intro .typing {
-  display: inline-block;
   color: #7fd3ec !important;
   font-weight: 500;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-#intro .typing.is-visible {
-  opacity: 1;
-  transform: none;
+/* The caret: solid while characters are being typed or erased,
+   softly pulsing while the finished phrase is held. */
+#intro .type-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 4px;
+  vertical-align: -0.14em;
+  border-radius: 1px;
+  background: #7fd3ec;
+  animation: caret-pulse 1.15s ease-in-out infinite;
 }
 
-/* Reduced motion: keep the phrases rotating, drop the movement */
-#intro .typing.no-fade {
+#intro .type-caret.is-steady {
+  animation: none;
   opacity: 1;
-  transform: none;
-  transition: none;
+}
+
+@keyframes caret-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.12; }
 }
 
 #intro.section .underline {
@@ -990,6 +997,11 @@ a.hoverline:hover {
     scroll-behavior: auto !important;
   }
   .reveal { opacity: 1; transform: none; }
+  /* A near-zero duration would turn the pulse into a flicker */
+  #intro .type-caret {
+    animation: none !important;
+    opacity: 1;
+  }
 }
 
 /* ---------------------------------------------------------
