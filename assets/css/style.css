@@ -229,6 +229,12 @@ ul.side-nav {
   border-right: 1px solid var(--border);
 }
 
+/* Materialize reserves 64px at the top of the fixed sidebar,
+   which pushed the avatar down the column. */
+ul.side-nav.fixed {
+  padding-top: 0;
+}
+
 ul.side-nav li {
   padding: 0 10px;
   line-height: normal;
@@ -271,10 +277,22 @@ ul.side-nav.fixed li.logo,
 ul#slide-out li.logo {
   background-color: transparent;
   border-bottom: 1px solid var(--border);
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 26px 30px 30px;
+  box-sizing: border-box;
+  min-height: 0;
+  padding: 22px 20px 24px;
   text-align: center;
+}
+
+/* Materialize's .brand-logo positions this link absolutely, which
+   drops the avatar down the sidebar. Put it back in the flow. */
+ul.side-nav li.logo a,
+ul.side-nav.fixed li.logo a {
+  position: static;
+  display: block;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
 }
 
 ul.table-of-contents li.logo a.active,
@@ -292,10 +310,11 @@ li.logo span {
 
 .profile-pic {
   display: block;
-  width: 110px;
-  height: 110px;
+  width: 124px;
+  height: 124px;
   margin: 0 auto;
   object-fit: cover;
+  object-position: center 18%;
   border: 3px solid var(--surface);
   border-radius: 50% !important;
   box-shadow: var(--shadow-md);
@@ -441,9 +460,22 @@ li.logo span {
   max-width: 46ch;
 }
 
+#intro .caption h5:first-of-type {
+  min-height: 1.6em;
+}
+
 #intro .typing {
+  display: inline-block;
   color: #7fd3ec !important;
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#intro .typing.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 #intro.section .underline {

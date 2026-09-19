@@ -697,9 +697,6 @@
   <!-- Materialize - Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-
   <script>
     // Materialize initializers
     $(document).ready(function () {
@@ -707,15 +704,33 @@
       $(".tooltipped").tooltip();
     });
 
-    // Typing effect in the intro
-    if (typeof Typed !== 'undefined' && document.querySelector('.typing')) {
-      new Typed('.typing', {
-        strings: ["Physical Education Teacher", "Coordinator of Physical Education", "Sportively Dedicated !"],
-        loop: true,
-        typeSpeed: 40,
-        backSpeed: 20
-      });
-    }
+    // Intro tagline: each phrase fades in, holds, then fades out.
+    (function () {
+      var el = document.querySelector('.typing');
+      if (!el) return;
+
+      var phrases = [
+        "Physical Education Teacher",
+        "Coordinator of Physical Education",
+        "Sportively Dedicated!"
+      ];
+      var index = 0;
+
+      el.textContent = phrases[0];
+      el.classList.add('is-visible');
+
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced || phrases.length < 2) return;
+
+      window.setInterval(function () {
+        el.classList.remove('is-visible');
+        window.setTimeout(function () {
+          index = (index + 1) % phrases.length;
+          el.textContent = phrases[index];
+          el.classList.add('is-visible');
+        }, 500);
+      }, 3800);
+    })();
   </script>
 
   <script>
