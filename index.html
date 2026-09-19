@@ -715,14 +715,11 @@
       var phrases = [
         "Physical Education Teacher",
         "Coordinator of Physical Education",
-        "Head of Physical Education",
-        "IGCSE PE Specialist",
-        "Builder of PE Web Apps",
-        "Sportively Dedicated!"
+        "IGCSE PE Specialist"
       ];
 
-      var TYPE_MS = 55;    // per character while writing
-      var ERASE_MS = 26;   // per character while erasing
+      var TYPE_MS = 28;    // per character while writing
+      var ERASE_MS = 14;   // per character while erasing
       var HOLD_MS = 1800;  // pause on the finished phrase
       var GAP_MS = 260;    // pause before the next phrase starts
 
@@ -755,7 +752,7 @@
             return;
           }
           // A little variation per keystroke reads as human rather than machine.
-          window.setTimeout(tick, TYPE_MS + Math.random() * 45);
+          window.setTimeout(tick, TYPE_MS + Math.random() * 22);
           return;
         }
 
