@@ -509,71 +509,93 @@
               their sessions across endurance, volume and strength goals, so training choices are based on their own
               data.
             </p>
-            <div class="app-tutorial" data-tutorial>
-              <div class="tutorial-frame">
-                <div class="tutorial-track" tabindex="0" role="region" aria-roledescription="carousel"
-                  aria-label="Gym Tracker tutorial, swipe or use the arrow keys">
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-01.png" width="1456" height="156" alt="Toolbar with the student picker and the Add, Refresh, Delete, Class, IGCSE and Tutorial buttons" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Getting a student started</span>Students pick themselves from a shared class list. On a tablet passed between two students, switching takes one tap and loads that student’s own history.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-02.png" width="1616" height="382" alt="Machine cards showing each verified one-rep max with a small trend line" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Getting a student started</span>Each machine holds a verified 1RM. The small line beside it is that student’s 1RM trend across the term, green when climbing.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-03.png" width="1340" height="1640" alt="Epley table for the leg press, converting a weight and rep count into a one-rep max" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Getting a student started</span>Most students cannot safely attempt a true one-rep max. The Epley table derives it from a manageable weight and rep count instead.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-04.png" width="1000" height="696" alt="Set-up and safety rules written by the teacher for one machine" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Getting a student started</span>Teacher-written set-up and safety rules sit on each machine, shared across the whole class.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-05.png" width="2000" height="356" alt="The three training zones with their load, rep and set ranges" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Planning a lesson</span>Three training zones. Each sets the working weight as a percentage of 1RM, and its own rep and set windows.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-06.png" width="2000" height="472" alt="Machine slots chosen for the session" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Planning a lesson</span>Eight machine slots by default, extendable to thirteen, the number of exercise rows on the Cambridge log sheet, so a session never overflows the form it is submitted on.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-07.png" width="2000" height="182" alt="Sets and reps selectors with the resulting working weight and rest time" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Planning a lesson</span>Reps and sets are chosen once for the session. The options shown change with the zone.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-08.png" width="1616" height="686" alt="Per-machine overrides for sets and reps" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Planning a lesson</span>Per-machine overrides are folded away by default to keep the screen calm. Once a machine differs, the button itself states how.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-09.png" width="1616" height="554" alt="Reps entered set by set for one machine" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Logging the session</span>Reps are entered per set. Going over the target flags the working weight as too light rather than scoring as a perfect set.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-10.png" width="2000" height="388" alt="Session score showing how close the student came to their targets" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Logging the session</span>A session score is how close the student came to their own targets, not to anyone else’s.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-11.png" width="1316" height="880" alt="Teacher panel showing each student’s progress and warnings during the lesson" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Watching the lesson live</span>Green means every set is in, orange means still under way. Warnings name the exercise and the problem: short of target, or past it on a weight that is too light.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-12.png" width="2000" height="1640" alt="Session history with scores and the choice of eight sessions for the IGCSE sheet" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Producing the coursework</span>Students choose which eight sessions represent their programme, the exact number of sessions the official Cambridge form has room for.</figcaption>
-                  </figure>
-                  <figure class="tutorial-slide">
-                    <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-13.png" width="1160" height="1278" alt="The filled official Cambridge weight training log" loading="lazy"></div>
-                    <figcaption><span class="tutorial-step">Producing the coursework</span>The official template is filled in and flattened, so it prints the same on a tablet and a laptop. Teachers can also export the whole class as one PDF.</figcaption>
-                  </figure>
-                </div>
-                <div class="tutorial-arrows">
-                  <button type="button" class="tutorial-arrow" data-dir="-1" aria-label="Previous step">&#8249;</button>
-                  <button type="button" class="tutorial-arrow" data-dir="1" aria-label="Next step">&#8250;</button>
+            <div class="app-showcase" data-showcase>
+              <div class="showcase-tabs" role="tablist" aria-label="Gym Tracker preview">
+                <button type="button" role="tab" class="showcase-tab" id="gym-tab-video" aria-controls="gym-panel-video"
+                  aria-selected="true"><i class="fa fa-play-circle" aria-hidden="true"></i> Video tour</button>
+                <button type="button" role="tab" class="showcase-tab" id="gym-tab-steps" aria-controls="gym-panel-steps"
+                  aria-selected="false" tabindex="-1"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Step by step
+                  <span class="showcase-badge">13</span></button>
+                <span class="showcase-indicator" aria-hidden="true"></span>
+              </div>
+
+              <div class="showcase-panel" role="tabpanel" id="gym-panel-video" aria-labelledby="gym-tab-video">
+                <div class="app-video">
+                  <video class="autoplay-video" controls loop muted playsinline preload="none" width="1200" height="600">
+                    <source src="assets/Video/gym-weight-training.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
-              <div class="tutorial-bar">
-                <div class="tutorial-dots"></div>
-                <span class="tutorial-count" aria-live="polite">Step 1 / 13</span>
+
+              <div class="showcase-panel" role="tabpanel" id="gym-panel-steps" aria-labelledby="gym-tab-steps" hidden>
+                <div class="app-tutorial" data-tutorial>
+                  <div class="tutorial-frame">
+                    <div class="tutorial-track" tabindex="0" role="region" aria-roledescription="carousel"
+                      aria-label="Gym Tracker tutorial, swipe or use the arrow keys">
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-01.png" width="1456" height="156" alt="Toolbar with the student picker and the Add, Refresh, Delete, Class, IGCSE and Tutorial buttons" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Getting a student started</span>Students pick themselves from a shared class list. On a tablet passed between two students, switching takes one tap and loads that student’s own history.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-02.png" width="1616" height="382" alt="Machine cards showing each verified one-rep max with a small trend line" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Getting a student started</span>Each machine holds a verified 1RM. The small line beside it is that student’s 1RM trend across the term, green when climbing.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-03.png" width="1340" height="1640" alt="Epley table for the leg press, converting a weight and rep count into a one-rep max" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Getting a student started</span>Most students cannot safely attempt a true one-rep max. The Epley table derives it from a manageable weight and rep count instead.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-04.png" width="1000" height="696" alt="Set-up and safety rules written by the teacher for one machine" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Getting a student started</span>Teacher-written set-up and safety rules sit on each machine, shared across the whole class.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-05.png" width="2000" height="356" alt="The three training zones with their load, rep and set ranges" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Planning a lesson</span>Three training zones. Each sets the working weight as a percentage of 1RM, and its own rep and set windows.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-06.png" width="2000" height="472" alt="Machine slots chosen for the session" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Planning a lesson</span>Eight machine slots by default, extendable to thirteen, the number of exercise rows on the Cambridge log sheet, so a session never overflows the form it is submitted on.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-07.png" width="2000" height="182" alt="Sets and reps selectors with the resulting working weight and rest time" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Planning a lesson</span>Reps and sets are chosen once for the session. The options shown change with the zone.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-08.png" width="1616" height="686" alt="Per-machine overrides for sets and reps" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Planning a lesson</span>Per-machine overrides are folded away by default to keep the screen calm. Once a machine differs, the button itself states how.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-09.png" width="1616" height="554" alt="Reps entered set by set for one machine" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Logging the session</span>Reps are entered per set. Going over the target flags the working weight as too light rather than scoring as a perfect set.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-10.png" width="2000" height="388" alt="Session score showing how close the student came to their targets" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Logging the session</span>A session score is how close the student came to their own targets, not to anyone else’s.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-11.png" width="1316" height="880" alt="Teacher panel showing each student’s progress and warnings during the lesson" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Watching the lesson live</span>Green means every set is in, orange means still under way. Warnings name the exercise and the problem: short of target, or past it on a weight that is too light.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-12.png" width="2000" height="1640" alt="Session history with scores and the choice of eight sessions for the IGCSE sheet" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Producing the coursework</span>Students choose which eight sessions represent their programme, the exact number of sessions the official Cambridge form has room for.</figcaption>
+                      </figure>
+                      <figure class="tutorial-slide">
+                        <div class="tutorial-shot"><img src="assets/img/gym-tutorial/step-13.png" width="1160" height="1278" alt="The filled official Cambridge weight training log" loading="lazy"></div>
+                        <figcaption><span class="tutorial-step">Producing the coursework</span>The official template is filled in and flattened, so it prints the same on a tablet and a laptop. Teachers can also export the whole class as one PDF.</figcaption>
+                      </figure>
+                    </div>
+                    <div class="tutorial-arrows">
+                      <button type="button" class="tutorial-arrow" data-dir="-1" aria-label="Previous step">&#8249;</button>
+                      <button type="button" class="tutorial-arrow" data-dir="1" aria-label="Next step">&#8250;</button>
+                    </div>
+                  </div>
+                  <div class="tutorial-bar">
+                    <div class="tutorial-dots"></div>
+                    <span class="tutorial-count" aria-live="polite">Step 1 / 13</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -911,7 +933,7 @@
         var count = root.querySelector('.tutorial-count');
         var arrows = root.querySelectorAll('.tutorial-arrow');
         var total = slides.length;
-        var current = -1;
+        var current = 0;
         var dots = [];
 
         Array.prototype.forEach.call(slides, function (slide, i) {
@@ -925,19 +947,35 @@
           dots.push(dot);
         });
 
+        // While an arrow/dot scroll is animating, ignore the in-between positions it passes through.
+        var target = null;
+        var targetTimer;
+
         function goTo(i) {
           i = Math.max(0, Math.min(total - 1, i));
+          target = i;
+          clearTimeout(targetTimer);
+          targetTimer = setTimeout(function () { target = null; update(); }, 900);
+          render(i);
           track.scrollTo({ left: i * track.clientWidth });
         }
 
-        function update() {
-          var i = Math.round(track.scrollLeft / track.clientWidth);
-          if (i === current) return;
+        function render(i) {
           current = i;
           dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); });
           count.textContent = 'Step ' + (i + 1) + ' / ' + total;
           arrows[0].disabled = i === 0;
           arrows[1].disabled = i === total - 1;
+        }
+
+        function update() {
+          if (!track.clientWidth) return; // inside a hidden tab
+          if (target !== null) {
+            if (Math.abs(track.scrollLeft - target * track.clientWidth) > 2) return;
+            target = null;
+          }
+          var i = Math.round(track.scrollLeft / track.clientWidth);
+          if (i !== current) render(i);
         }
 
         Array.prototype.forEach.call(arrows, function (btn) {
@@ -958,7 +996,49 @@
           window.requestAnimationFrame(function () { ticking = false; update(); });
         });
 
-        update();
+        // Hiding the tab or resizing the window loses the scroll position: put the current step back.
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(function () {
+            if (track.clientWidth) track.scrollTo({ left: current * track.clientWidth, behavior: 'instant' });
+          }).observe(track);
+        }
+
+        render(0);
+      });
+    })();
+  </script>
+
+  <script>
+    // PE Apps showcase: switch between the video tour and the step-by-step tutorial.
+    (function () {
+      var showcases = document.querySelectorAll('[data-showcase]');
+
+      Array.prototype.forEach.call(showcases, function (root) {
+        var tablist = root.querySelector('.showcase-tabs');
+        var tabs = root.querySelectorAll('.showcase-tab');
+
+        function select(index, focus) {
+          Array.prototype.forEach.call(tabs, function (tab, n) {
+            var on = n === index;
+            tab.setAttribute('aria-selected', on ? 'true' : 'false');
+            tab.tabIndex = on ? 0 : -1;
+            document.getElementById(tab.getAttribute('aria-controls')).hidden = !on;
+            if (on && focus) tab.focus();
+          });
+          tablist.setAttribute('data-active', index);
+        }
+
+        Array.prototype.forEach.call(tabs, function (tab, n) {
+          tab.addEventListener('click', function () { select(n); });
+          tab.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+              e.preventDefault();
+              select((n + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length, true);
+            }
+          });
+        });
+
+        select(0);
       });
     })();
   </script>
