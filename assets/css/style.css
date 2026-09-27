@@ -845,107 +845,35 @@ li.logo span {
   box-shadow: var(--shadow-md);
 }
 
-/* Showcase: segmented switch between the video tour and the tutorial */
-.app-showcase {
-  max-width: 720px;
-  margin: 22px auto 0;
-}
-
-.showcase-tabs {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: fit-content;
-  margin: 0 auto 16px;
-  padding: 4px;
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-}
-
-.showcase-tab {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 9px 20px;
-  font-family: var(--font-head);
-  font-size: 0.92rem;
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--muted);
-  background: transparent;
-  border: 0;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.25s ease;
-}
-
-.showcase-tab:focus { background: transparent; }  /* undo Materialize's teal button:focus */
-.showcase-tab:hover { color: var(--heading); }
-
-.showcase-tab:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.showcase-tab[aria-selected="true"] { color: #fff; }
-
-.showcase-indicator {
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: 4px;
-  width: calc(50% - 4px);
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.showcase-tabs[data-active="1"] .showcase-indicator { transform: translateX(100%); }
-
-.showcase-badge {
-  padding: 1px 7px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.5;
-  color: var(--accent-ink);
-  background: var(--accent-soft);
-  border-radius: 999px;
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.showcase-tab[aria-selected="true"] .showcase-badge {
-  color: inherit;
-  background: rgba(255, 255, 255, 0.22);
-}
-
-:root[data-theme="dark"] .showcase-tab[aria-selected="true"] { color: #0e1420; }
-:root[data-theme="dark"] .showcase-tab[aria-selected="true"] .showcase-badge { background: rgba(14, 20, 32, 0.16); }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .showcase-tab[aria-selected="true"] { color: #0e1420; }
-  :root:not([data-theme="light"]) .showcase-tab[aria-selected="true"] .showcase-badge { background: rgba(14, 20, 32, 0.16); }
-}
-
-.showcase-panel { animation: showcase-in 0.35s ease both; }
-.showcase-panel[hidden] { display: none; }
-.showcase-panel .app-video,
-.showcase-panel .app-tutorial { margin-top: 0; }
-
-@keyframes showcase-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: none; }
-}
-
-/* Swipeable screenshot tutorial - same frame as .app-video */
+/* Swipeable screenshot tutorial - same frame as .app-video, placed under it */
 .app-tutorial {
   --shot-ratio: 16 / 9;
   max-width: 720px;
   margin: 10px auto 0;
+}
+
+.app-video + .app-tutorial { margin-top: 30px; }
+
+/* Label between the video and the tutorial, with a hairline either side */
+.tutorial-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 16px;
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tutorial-heading::before,
+.tutorial-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
 .tutorial-frame {
@@ -1110,8 +1038,6 @@ li.logo span {
 }
 
 @media (max-width: 600px) {
-  .showcase-tabs { width: 100%; }
-  .showcase-tab { padding: 9px 10px; font-size: 0.86rem; }
   .app-tutorial { --shot-ratio: 4 / 3; }
   .tutorial-shot { padding: 12px; }
   .tutorial-arrows { display: none; }
@@ -1120,8 +1046,7 @@ li.logo span {
 
 @media (prefers-reduced-motion: reduce) {
   .tutorial-track { scroll-behavior: auto; }
-  .tutorial-dot, .tutorial-arrow, .showcase-indicator { transition: none; }
-  .showcase-panel { animation: none; }
+  .tutorial-dot, .tutorial-arrow { transition: none; }
 }
 
 .card .app-link,
@@ -1436,7 +1361,7 @@ a.hoverline:hover {
    --------------------------------------------------------- */
 @media print {
   nav, .theme-toggle, .social, .buttons,
-  .gallery-images, .app-video, .app-showcase, .app-tutorial, .overlay { display: none !important; }
+  .gallery-images, .app-video, .app-tutorial, .overlay { display: none !important; }
 
   main { padding-left: 0; }
   body { background: #fff; color: #000; font-size: 11pt; }
